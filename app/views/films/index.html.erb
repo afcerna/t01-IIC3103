@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Films</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Episode</th>
+      <!-- <th>Opening crawl</th> -->
+      <th>Director</th>
+      <th>Producer</th>
+      <th>Release date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @films.each do |film| %>
+      <tr>
+        <td><%= film["title"] %></td>
+        <td><%= film["episode_id"] %></td>
+        <!-- <td><%= film["opening_crawl"] %></td> -->
+        <td><%= film["director"] %></td>
+        <td><%= film["producer"] %></td>
+        <td><%= film["release_date"] %></td>
+        <td><%= link_to 'Show', show_film_path(url: film["url"]) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Films', index_films_path %> |
+<%= link_to 'People', index_people_path %> |
+<%= link_to 'Planets', index_planets_path %> |
+<%= link_to 'Starships', index_starships_path %>

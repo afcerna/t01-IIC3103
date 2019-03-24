@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @film["title"] %>
+</p>
+
+<p>
+  <strong>Episode:</strong>
+  <%= @film["episode_id"] %>
+</p>
+
+<p>
+  <strong>Opening crawl:</strong>
+  <%= @film["opening_crawl"] %>
+</p>
+
+<p>
+  <strong>Director:</strong>
+  <%= @film["director"] %>
+</p>
+
+<p>
+  <strong>Producer:</strong>
+  <%= @film["producer"] %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @film["release_date"] %>
+</p>
+
+<p>
+  <strong>Created at swapi:</strong>
+  <%= @film["created_at_swapi"] %>
+</p>
+
+<p>
+  <strong>Edited at swapi:</strong>
+  <%= @film["edited_at_swapi"] %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @film["url"] %>
+</p>
+
+<p>
+  <strong>Characters:</strong>
+  <% @film["characters"].each do |p| %>
+  <tr>
+    <td><%= link_to p.name, show_person_path(url: p.url) %></td>
+  </tr>
+  <% end %>
+</p>
+<p>
+  <strong>Planets:</strong>
+  <% @film["planets"].each do |p| %>
+  <tr>
+    <td><%= link_to p.name, show_planet_path(url: p.url) %></td>
+
+  </tr>
+  <% end %>
+</p>
+
+<p>
+  <strong>Starships:</strong>
+  <% @film["starships"].each do |s| %>
+  <tr>
+    <td><%= link_to s.name, show_starship_path(url: s.url) %></td>
+
+  </tr>
+  <% end %>
+</p>
+
+<%= link_to 'Films', index_films_path %> |
+<%= link_to 'People', index_people_path %> |
+<%= link_to 'Planets', index_planets_path %> |
+<%= link_to 'Starships', index_starships_path %>

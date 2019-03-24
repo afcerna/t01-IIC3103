@@ -1,0 +1,106 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @starship["name"] %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @starship["model"] %>
+</p>
+
+<p>
+  <strong>Manufacturer:</strong>
+  <%= @starship["manufacturer"] %>
+</p>
+
+<p>
+  <strong>Cost in credits:</strong>
+  <%= @starship["cost_in_credits"] %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @starship["length"] %>
+</p>
+
+<p>
+  <strong>Max atmosphering speed:</strong>
+  <%= @starship["max_atmosphering_speed"] %>
+</p>
+
+<p>
+  <strong>Crew:</strong>
+  <%= @starship["crew"] %>
+</p>
+
+<p>
+  <strong>Passengers:</strong>
+  <%= @starship["passengers"] %>
+</p>
+
+<p>
+  <strong>Cargo capacity:</strong>
+  <%= @starship["cargo_capacity"] %>
+</p>
+
+<p>
+  <strong>Consumables:</strong>
+  <%= @starship["consumables"] %>
+</p>
+
+<p>
+  <strong>Hyperdrive rating:</strong>
+  <%= @starship["hyperdrive_rating"] %>
+</p>
+
+<p>
+  <strong>Mglt:</strong>
+  <%= @starship["MGLT"] %>
+</p>
+
+<p>
+  <strong>Starship class:</strong>
+  <%= @starship["starship_class"] %>
+</p>
+
+<p>
+  <strong>Creted at swapi:</strong>
+  <%= @starship["created_at_swapi"] %>
+</p>
+
+<p>
+  <strong>Edited at swapi:</strong>
+  <%= @starship["edited_at_swapi"] %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @starship["url"] %>
+</p>
+
+<p>
+  <strong>Pilots:</strong>
+  <% @starship["pilots"].each do |p| %>
+  <tr>
+    <td><%= link_to p.name, show_person_path(url: p.url) %></td>
+  </tr>
+  <% end %>
+
+</p>
+
+<p>
+  <strong>Films:</strong>
+  <% @starship["films"].each do |f| %>
+  <tr>
+    <td><%= link_to f.title, show_film_path(url: f.url) %></td>
+  </tr>
+  <% end %>
+
+</p>
+
+<%= link_to 'Films', index_films_path %> |
+<%= link_to 'People', index_people_path %> |
+<%= link_to 'Planets', index_planets_path %> |
+<%= link_to 'Starships', index_starships_path %>

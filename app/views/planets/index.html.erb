@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Planets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rotation period</th>
+      <th>Orbital period</th>
+      <th>Diameter</th>
+      <th>Gravity</th>
+      <th>Terrain</th>
+      <th>Surface water</th>
+      <th>Population</th>
+      <!-- <th>Created at swapi</th>
+      <th>Edited at swapi</th> -->
+      <!-- <th>Url</th> -->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @planets.each do |planet| %>
+      <tr>
+        <td><%= planet["name"] %></td>
+        <td><%= planet["rotation_period"] %></td>
+        <td><%= planet["orbital_period"] %></td>
+        <td><%= planet["diameter"] %></td>
+        <td><%= planet["gravity"] %></td>
+        <td><%= planet["terrain"] %></td>
+        <td><%= planet["surface_water"] %></td>
+        <td><%= planet["population"] %></td>
+        <!-- <td><%= planet["created_at_swapi"] %></td>
+        <td><%= planet["edited_at_swapi"] %></td> -->
+        <!-- <td><%= planet["url"] %></td> -->
+        <td><%= link_to 'Show', show_planet_path(url: planet["url"]) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Films', index_films_path %> |
+<%= link_to 'People', index_people_path %> |
+<%= link_to 'Planets', index_planets_path %> |
+<%= link_to 'Starships', index_starships_path %>

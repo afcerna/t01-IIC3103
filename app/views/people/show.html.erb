@@ -1,0 +1,85 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person["name"] %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @person["height"] %>
+</p>
+
+<p>
+  <strong>Mass:</strong>
+  <%= @person["mass"] %>
+</p>
+
+<p>
+  <strong>Hair color:</strong>
+  <%= @person["hair_color"] %>
+</p>
+
+<p>
+  <strong>Skin color:</strong>
+  <%= @person["skin_color"] %>
+</p>
+
+<p>
+  <strong>Eye color:</strong>
+  <%= @person["eye_color"] %>
+</p>
+
+<p>
+  <strong>Birth year:</strong>
+  <%= @person["birth_year"] %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @person["gender"] %>
+</p>
+
+<p>
+  <strong>Homeworld:</strong>
+  <%= @person["homeworld"] %>
+</p>
+
+<p>
+  <strong>Created at swapi:</strong>
+  <%= @person["created_at_swapi"] %>
+</p>
+
+<p>
+  <strong>Updated at swapi:</strong>
+  <%= @person["edited_at_swapi"] %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @person["url"] %>
+</p>
+
+<p>
+  <strong>Films:</strong>
+  <% @person["films"].each do |p| %>
+  <tr>
+    <td><%= link_to p["name"], show_film_path(url: p["url"]) %></td>
+  </tr>
+  <% end %>
+
+</p>
+
+<p>
+  <strong>Starships:</strong>
+  <% @person["starships"].each do |s| %>
+  <tr>
+    <td><%= link_to s["name"], show_starship_path(url: s["url"]) %></td>
+  </tr>
+  <% end %>
+
+</p>
+<%= link_to 'Films', index_films_path %> |
+<%= link_to 'People', index_people_path %> |
+<%= link_to 'Planets', index_planets_path %> |
+<%= link_to 'Starships', index_starships_path %>
